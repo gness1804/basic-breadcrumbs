@@ -11,7 +11,12 @@ class App extends Component {
           if (links.indexOf(link) === (links.length - 1)) {
             return <span key={link.id}>{link.title}</span>
           } else {
-            return <a href={link.href} key={link.id}>{link.title}</a>
+            return (
+             <div key={link.id} style={{ display: 'inline-block' }}>
+               <a href={link.href} style={{marginRight: 20}}>{link.title}</a>
+               <span style={{marginRight: 10}}>&#9654;</span>
+            </div> 
+            )
           }
         })}
       </div>
