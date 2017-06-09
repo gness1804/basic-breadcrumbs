@@ -8,7 +8,11 @@ class App extends Component {
     return (
       <div className="App">
         {links.map((link) => {
-          return <a href={link.href} key={link.id}>{link.title}</a>
+          if (links.indexOf(link) === (links.length - 1)) {
+            return <span key={link.id}>{link.title}</span>
+          } else {
+            return <a href={link.href} key={link.id}>{link.title}</a>
+          }
         })}
       </div>
     );
